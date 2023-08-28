@@ -1,10 +1,12 @@
 <%-- 
     Document   : index
-    Created on : 28 ago. 2023, 09:44:33
+    Created on : 28 ago. 2023, 11:04:03
     Author     : kevin
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%response.sendRedirect("Empleados");%>
+
 <!DOCTYPE html>
 <html>
     <head>
