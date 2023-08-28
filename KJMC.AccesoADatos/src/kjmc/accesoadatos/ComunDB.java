@@ -24,7 +24,7 @@ public class ComunDB {
     // La propiedad "connectionUrl" es para almacenar el string de conexion a la
     // base de datos actual
     static String connectionUrl = "jdbc:sqlserver://DESKTOP-8HD9OV4:1433;"
-            + "database=FileManagement;"
+            + "database=KJMC28082023;"
             + "user=Kevin;"
             + "password=12345;"
             + "loginTimeout=30;encrypt=false;trustServerCertificate=false";
