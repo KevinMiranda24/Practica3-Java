@@ -154,23 +154,24 @@ public class EmpleadoDAL {
             if (statement != null) {
                 statement.setString(pUtilQuery.getNumWhere(), "%" + xEmp.getPuesto() + "%"); 
             }
+        }
     }
 
     public static ArrayList<Empleado> Search(Empleado xEmp) throws Exception {
-        ArrayList<Book> books = new ArrayList();
+        ArrayList<Empleado> xEmps = new ArrayList();
         try (Connection conn = ComunDB.obtenerConexion();) {
-            String sql = getSelect(book);
+            String sql = getSelect(xEmp);
             ComunDB comundb = new ComunDB();
             ComunDB.UtilQuery utilQuery = comundb.new UtilQuery(sql, null, 0); 
-            querySelect(book, utilQuery);
+            querySelect(xEmp, utilQuery);
             sql = utilQuery.getSQL(); 
-            sql += addOrderBy(book);
+            sql += addOrderBy(xEmp);
             try (PreparedStatement ps = ComunDB.createPreparedStatement(conn, sql);) {
                 utilQuery.setStatement(ps);
                 utilQuery.setSQL(null);
                 utilQuery.setNumWhere(0); 
-                querySelect(book, utilQuery);
-                getData(ps, books);
+                querySelect(xEmp, utilQuery);
+                getData(ps, xEmps);
                 ps.close();
             } catch (SQLException ex) {
                 throw ex;
@@ -180,6 +181,6 @@ public class EmpleadoDAL {
         catch (SQLException ex) {
             throw ex;
         }
-        return books;
+        return xEmps;
     }   
 }
