@@ -8,27 +8,25 @@ package kjmc.entidades;
  *
  * @author kevin
  */
-public class Empleado {
+public class Empleados {
     
     public int id;
     public String nombre;
     public String apellido;
     public String correo;
     public String puesto;
-    public int top_aux;
 
-    public Empleado() {
+    public Empleados() {
     }
 
-    public Empleado(int id, String nombre, String apellido, String correo, String puesto, int top_aux) {
+    public Empleados(int id, String nombre, String apellido, String correo, String puesto) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;
         this.puesto = puesto;
-        this.top_aux = top_aux;
     }
-    
+
     public int getId() {
         return id;
     }
@@ -67,15 +65,5 @@ public class Empleado {
 
     public void setPuesto(String puesto) {
         this.puesto = puesto;
-    }
-
-    public int getTop_aux() {
-        return top_aux;
-    }
-
-    public void setTop_aux(int top_aux) {
-        this.top_aux = top_aux;
-    }
-    
-    
+    } 
 }
